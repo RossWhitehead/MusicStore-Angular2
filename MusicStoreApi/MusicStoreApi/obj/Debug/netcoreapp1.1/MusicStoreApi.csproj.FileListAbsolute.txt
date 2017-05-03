@@ -1,0 +1,9 @@
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\bin\Debug\netcoreapp1.1\MusicStoreApi.deps.json
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\bin\Debug\netcoreapp1.1\MusicStoreApi.runtimeconfig.json
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\bin\Debug\netcoreapp1.1\MusicStoreApi.runtimeconfig.dev.json
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\bin\Debug\netcoreapp1.1\MusicStoreApi.dll
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\obj\Debug\netcoreapp1.1\MusicStoreApi.csprojResolveAssemblyReference.cache
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\obj\Debug\netcoreapp1.1\MusicStoreApi.AssemblyInfo.cs
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\bin\Debug\netcoreapp1.1\MusicStoreApi.pdb
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\obj\Debug\netcoreapp1.1\MusicStoreApi.dll
+C:\Repos\MusicStore-Angular2\MusicStoreApi\MusicStoreApi\obj\Debug\netcoreapp1.1\MusicStoreApi.pdb

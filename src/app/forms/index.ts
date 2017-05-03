@@ -1,0 +1,1 @@
+export { CustomerFormComponent } from './customer-form.component';
