@@ -11,23 +11,26 @@ export class DataService {
     }
 
     getTopSellingAlbums(): Observable<Album[]> {
-        return this.http.get('http://localhost:49997/api/albums/topselling')
-            .do(res => console.log('HTTP response:', res))
-            .map((response: Response) => <Album[]>response.json())
-            .catch(this.handleError);
+        // return this.http.get('http://localhost:49997/api/albums/topselling')
+        //     .do(res => console.log('HTTP response:', res))
+        //     .map((response: Response) => <Album[]>response.json())
+        //     .catch(this.handleError);
+        return null;
     }
 
     getGenre(): Observable<Genre> {
-        return this.http.get('http://localhost:49997/api/genres/country')
-            .map((response: Response) => response.json() as Genre)
-            .do(console.log)
-            .catch(this.handleError);
+        // return this.http.get('http://localhost:49997/api/genres/country')
+        //     .map((response: Response) => response.json() as Genre)
+        //     .do(console.log)
+        //     .catch(this.handleError);
+        return null;
     }
 
     test(): Observable<Response> {
-        return this.http.get('http://localhost:49997/api/genres/country')
-            .do(res => console.log('HTTP response:', res))
-            .catch(this.handleError);
+        // return this.http.get('http://localhost:49997/api/genres/country')
+        //     .do(res => console.log('HTTP response:', res))
+        //     .catch(this.handleError);
+        return null;
     }
 
     handleError(error: Response) {

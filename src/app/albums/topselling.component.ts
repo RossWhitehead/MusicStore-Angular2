@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Album, AlbumService } from './index';
+import { Album, DataService } from '../data';
 
 @Component({
     selector: 'app-top-selling',
@@ -8,12 +8,12 @@ import { Album, AlbumService } from './index';
 export class TopSellingComponent implements OnInit {
     albums: Album[];
 
-    constructor(private albumService: AlbumService) {
+    constructor(private dataService: DataService) {
 
     }
 
     ngOnInit() {
-        this.albumService.getTopSellingAlbums().subscribe(albums => this.albums = albums);
+        this.dataService.getTopSellingAlbums().subscribe(albums => this.albums = albums);
         console.log(this.albums);
     }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Genre, AlbumService } from './index';
+import { Genre, DataService } from '../data';
 
 @Component({
     selector: 'app-browse',
@@ -8,12 +8,12 @@ import { Genre, AlbumService } from './index';
 export class BrowseComponent implements OnInit {
     genre: Genre;
 
-    constructor(private albumService: AlbumService) {
+    constructor(private dataService: DataService) {
 
     }
 
     ngOnInit() {
-        this.albumService.getGenre().subscribe(
+        this.dataService.getGenre().subscribe(
             genre => this.genre = genre,
             function (error) { console.log('Error happened' + error); },
             function () { console.log('the subscription is completed - ' + this.genre); });

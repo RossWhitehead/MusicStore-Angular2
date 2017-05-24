@@ -16,6 +16,8 @@ import { ErrorComponent } from './error';
 
 import { DataService } from './data';
 
+import { AdminModule } from './admin';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { DataService } from './data';
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
+    AdminModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
