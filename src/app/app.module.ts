@@ -10,8 +10,11 @@ import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './app.config';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent, GenreMenuComponent } from './nav';
-import { AlbumService, TopSellingComponent, BrowseComponent } from './albums';
+import { TopSellingComponent, BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
+import { ErrorComponent } from './error';
+
+import { DataService } from './data';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { CustomerFormComponent } from './forms';
     GenreMenuComponent,
     TopSellingComponent,
     CustomerFormComponent,
-    BrowseComponent
+    BrowseComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ import { CustomerFormComponent } from './forms';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    AlbumService,
+    DataService,
     { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
 
   ],
