@@ -1,1 +1,27 @@
-<h1>Login page</h1>
+<div class="row">
+    <h1>Logon</h1>
+</div>
+<div class="row">
+    <form>
+        <div class="col-md-12">
+            <label>Email
+                <input type="text" placeholder="Enter email address" id="email" name="email" [(ngModel)]="email" required #em="ngModel">
+                <div [hidden]="em.valid || em.pristine" class="bg-danger">
+                    Email is required
+                </div>
+            </label>
+        </div>
+        <div class="col-md-12">
+            <label>Password
+                <input type="password" placeholder="Enter password" id="passwprd" name="password" [(ngModel)]="password" required #pwd="ngModel">
+                <div [hidden]="pwd.valid || pwd.pristine" class="bg-danger">
+                    Email is required
+                </div>
+            </label>
+        </div>
+        <div class="col-md-12">
+            <a class="btn btn-primary" (click)="login()">Login</a>
+            <a (click)="cancel()">Cancel</a>
+        </div>
+    </form>
+</div>

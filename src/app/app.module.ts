@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { appRoutes } from './routes';
+import { appRoutes } from './app.routes';
 
 import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './app.config';
 
@@ -29,10 +29,10 @@ import { AdminModule } from './admin';
     ErrorComponent
   ],
   imports: [
+    AdminModule, // Must be placed before the RouterModule
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    AdminModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

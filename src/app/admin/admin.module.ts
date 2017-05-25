@@ -6,9 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './adminComponent';
 import { AdminMenuComponent } from './adminMenu';
 import { LoginComponent } from './login';
-import { SignUpComponent } from './signUp';
 
-import { AdminRoutes } from './routes';
+import { adminRoutes } from './admin.routes';
 
 import { UserService } from './adminShared';
 
@@ -16,16 +15,14 @@ import { UserService } from './adminShared';
     declarations: [
         AdminComponent,
         AdminMenuComponent,
-        LoginComponent,
-        SignUpComponent
+        LoginComponent
     ],
     imports: [ 
         CommonModule,
-        RouterModule.forChild(AdminRoutes),
+        RouterModule.forChild(adminRoutes),
         FormsModule 
     ],
     exports: [ RouterModule ],
-    providers: [ UserService ],
-    bootstrap: []
+    providers: [ UserService ]
 })
 export class AdminModule {}
