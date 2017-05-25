@@ -5,16 +5,20 @@ import { FormsModule } from '@angular/forms';
 
 import { AdminComponent } from './adminComponent';
 import { AdminMenuComponent } from './adminMenu';
+import { AlbumAddComponent } from "./albumAdd";
+import { AlbumAdminComponent } from "./albumAdmin";
 import { LoginComponent } from './login';
 
 import { adminRoutes } from './admin.routes';
 
-import { UserService } from './adminShared';
+import { AlbumAdminService, UserService } from './adminShared';
 
 @NgModule({
     declarations: [
         AdminComponent,
         AdminMenuComponent,
+        AlbumAddComponent,
+        AlbumAdminComponent,
         LoginComponent
     ],
     imports: [ 
@@ -23,6 +27,9 @@ import { UserService } from './adminShared';
         FormsModule 
     ],
     exports: [ RouterModule ],
-    providers: [ UserService ]
+    providers: [ 
+        AlbumAdminService,
+        UserService 
+    ]
 })
 export class AdminModule {}

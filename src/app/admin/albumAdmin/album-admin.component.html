@@ -1,0 +1,18 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li><a (click)="chooseMode('add')">Add Album</a></li>
+                <li><a>Welcome {{userName}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div *ngFor="let album of albums" class="col-md-12">
+        <h4>{{album.title}}</h4>
+    </div>
+</div>
+<div [ngSwitch]="menuChoice">
+    <div *ngSwitchCase="'add'"><album-add></album-add></div>
+</div>
