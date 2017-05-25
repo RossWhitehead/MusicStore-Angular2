@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { Genre } from './index';
+import { Genre } from '../data';
 
 @Component({
-    selector: 'app-genre-menu',
+    selector: 'genre-menu',
     templateUrl: './genre-menu.component.html',
 })
 export class GenreMenuComponent {
     genres: Genre [] = [
-        new Genre('Country'),
-        new Genre('R&B')
+        new Genre(1, 'Country'),
+        new Genre(2, 'R&B')
     ];
 }

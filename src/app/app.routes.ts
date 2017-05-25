@@ -3,9 +3,9 @@ import { CustomerFormComponent } from './forms';
 import { ErrorComponent } from './error';
 
 export const appRoutes = [
-    { path: 'topselling', component: TopSellingComponent },
+    { path: 'home', component: TopSellingComponent },
     { path: 'form', component: CustomerFormComponent },
     { path: 'browse/:name', component: BrowseComponent },
-    { path: '', redirectTo: '/form', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', component: ErrorComponent }
 ];

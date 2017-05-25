@@ -9,7 +9,7 @@ import { appRoutes } from './app.routes';
 import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './app.config';
 
 import { AppComponent } from './app.component';
-import { NavBarComponent, GenreMenuComponent } from './nav';
+import { AppMenuComponent, GenreMenuComponent } from './appMenu';
 import { TopSellingComponent, BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
 import { ErrorComponent } from './error';
@@ -21,7 +21,7 @@ import { AdminModule } from './admin';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
+    AppMenuComponent,
     GenreMenuComponent,
     TopSellingComponent,
     CustomerFormComponent,

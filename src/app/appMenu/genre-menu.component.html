@@ -1,0 +1,3 @@
+<li *ngFor="let genre of genres">
+    <a [routerLink]="['browse', genre.name]">{{genre.name}}</a>
+</li>
