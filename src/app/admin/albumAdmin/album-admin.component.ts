@@ -11,7 +11,7 @@ import { Album } from "app/data";
 })
 export class AlbumAdminComponent implements OnInit {
     userName: string;
-    menuChoice: string;
+    mode: string;
     albums: any;
 
     constructor(private albumAdminService: AlbumAdminService, private userService: UserService, private router: Router) { }
@@ -44,6 +44,6 @@ export class AlbumAdminComponent implements OnInit {
     }
 
     chooseMode(mode: string) {
-        this.menuChoice = mode;
+        this.mode = mode;
     }
 }
