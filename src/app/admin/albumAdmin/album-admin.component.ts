@@ -12,17 +12,20 @@ import { Album } from "app/data";
 export class AlbumAdminComponent implements OnInit {
     userName: string;
     menuChoice: string;
-    albums: Album[];
+    albums: any;
 
     constructor(private albumAdminService: AlbumAdminService, private userService: UserService, private router: Router) { }
 
-    ngOnInit() { 
+    ngOnInit() {
         this.userName = this.userService.userName;
         this.getAlbums();
     }
 
     getAlbums() {
-        this.albums = this.albumAdminService.getAlbums();
+        this.albumAdminService.getAlbums().then(snapshot => {
+            let json: string[] = snapshot.val();
+            this.albums = Object.keys(json).map(key => json[key]);
+        });
     }
 
     createAlbum(album: Album) {
@@ -34,17 +37,13 @@ export class AlbumAdminComponent implements OnInit {
             price: album.price,
             albumArtUrl: album.albumArtUrl
         }, function (error) {
-            if(error){
+            if (error) {
                 alert(`${error.message} Unable to log in. Please try again.`);
-            }
-            else
-            {
-                alert('Album saved.');
             }
         });
     }
-    
-    chooseMode(mode: string){
+
+    chooseMode(mode: string) {
         this.menuChoice = mode;
     }
 }

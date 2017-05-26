@@ -6,21 +6,15 @@ import { Album } from "app/data";
 
 @Injectable()
 export class AlbumAdminService {
-    albums: Album[];
+    albums: any;
 
-    getAlbums(): Album[] {
-        let dbRef = firebase.database().ref('albums/');
-        dbRef.once('value')
-            .then((snapshot) => {
-                let data: string[] = snapshot.val();
-                return Object.keys(data).map(key => data[key]);
-            });
-
-        return null;
+    getAlbums(): any {
+        let albumsRef = firebase.database().ref('albums');
+        return albumsRef.once('value')
     }
 
     createAlbum(album: Album) {
-        let albumsRef = firebase.database().ref('albums/');
+        let albumsRef = firebase.database().ref('albums');
         let newAlbumRef = albumsRef.push().set({
             title: album.title,
             artist: album.artist,

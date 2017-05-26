@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { AdminComponent } from './adminComponent';
-import { AdminMenuComponent } from './adminMenu';
+import { AdminHomeComponent } from './adminHome';
 import { AlbumAdminComponent } from "./albumAdmin";
 import { LoginComponent } from './login';
 
@@ -13,6 +13,6 @@ export const adminRoutes: Routes = [{
     children: [
         { path: 'album-admin', component: AlbumAdminComponent, canActivate: [UserService] },
         { path: 'login', component: LoginComponent },
-        { path: '', component: AdminMenuComponent, canActivate: [UserService] }
+        { path: '', component: AdminHomeComponent, canActivate: [UserService] }
     ]
 }];

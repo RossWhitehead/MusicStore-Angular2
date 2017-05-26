@@ -40,7 +40,6 @@ export class UserService implements CanActivate {
         this.authUser = firebase.auth().currentUser;
 
         if (this.authUser) {
-            alert(`Welcome ${this.authUser.email}`);
             this.userName = this.authUser.email;
             this.isLoggedIn = true;
             this.router.navigate(['/admin']);
@@ -58,7 +57,6 @@ export class UserService implements CanActivate {
         firebase.auth().signOut().then(
             function () {
                 this.isLoggedIn = false;
-                alert('Logged out.');
             },
             function (error) {
                 alert(`${error.message} Unable to log in. Please try again.`);

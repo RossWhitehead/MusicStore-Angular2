@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminComponent } from './adminComponent';
-import { AdminMenuComponent } from './adminMenu';
-import { AlbumAddComponent } from "./albumAdd";
+import { AdminHomeComponent } from './adminHome';
 import { AlbumAdminComponent } from "./albumAdmin";
+import { AlbumAddComponent } from "./albumAdmin/albumAdd";
 import { LoginComponent } from './login';
 
 import { adminRoutes } from './admin.routes';
@@ -16,7 +16,7 @@ import { AlbumAdminService, UserService } from './adminShared';
 @NgModule({
     declarations: [
         AdminComponent,
-        AdminMenuComponent,
+        AdminHomeComponent,
         AlbumAddComponent,
         AlbumAdminComponent,
         LoginComponent
@@ -24,7 +24,8 @@ import { AlbumAdminService, UserService } from './adminShared';
     imports: [ 
         CommonModule,
         RouterModule.forChild(adminRoutes),
-        FormsModule 
+        FormsModule,
+        ReactiveFormsModule 
     ],
     exports: [ RouterModule ],
     providers: [ 
