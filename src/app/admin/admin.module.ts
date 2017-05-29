@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AdminComponent } from './adminComponent';
+import { AdminComponent } from './admin.component';
 import { AdminHomeComponent } from './adminHome';
-import { AlbumAdminComponent } from "./albumAdmin";
-import { AlbumAddComponent } from "./albumAdmin/albumAdd";
+import { AlbumAdminComponent } from './albumAdmin';
+import { AlbumAddComponent } from './albumAdmin/albumAdd';
 import { LoginComponent } from './login';
 
 import { adminRoutes } from './admin.routes';
+
+import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from 'app/config/app.config';
 
 import { AlbumAdminService, UserService } from './adminShared';
 
@@ -21,16 +23,17 @@ import { AlbumAdminService, UserService } from './adminShared';
         AlbumAdminComponent,
         LoginComponent
     ],
-    imports: [ 
+    imports: [
         CommonModule,
         RouterModule.forChild(adminRoutes),
         FormsModule,
-        ReactiveFormsModule 
+        ReactiveFormsModule
     ],
-    exports: [ RouterModule ],
-    providers: [ 
+    exports: [RouterModule],
+    providers: [
         AlbumAdminService,
-        UserService 
+        UserService,
+        { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
     ]
 })
-export class AdminModule {}
+export class AdminModule { }

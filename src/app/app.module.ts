@@ -6,9 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { appRoutes } from './app.routes';
 
-import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './app.config';
+import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './config/app.config';
 
-import { AppComponent } from './app.component';
+import { AdminModule } from './admin';
 import { AppMenuComponent, GenreMenuComponent } from './appMenu';
 import { TopSellingComponent, BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
@@ -38,7 +38,6 @@ import { AdminModule } from './admin';
   providers: [
     DataService,
     { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
-
   ],
   bootstrap: [AppComponent]
 })

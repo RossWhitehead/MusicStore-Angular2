@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { AdminComponent } from './adminComponent';
+import { AdminComponent } from '.';
 import { AdminHomeComponent } from './adminHome';
-import { AlbumAdminComponent } from "./albumAdmin";
+import { AlbumAdminComponent } from './albumAdmin';
 import { LoginComponent } from './login';
 
 import { UserService } from './adminShared';

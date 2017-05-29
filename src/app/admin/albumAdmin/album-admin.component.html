@@ -20,7 +20,7 @@
 </nav>
 <h1>Album Admin</h1>
 <div class="row">
-    <h2>{{albums?.length}}</h2>
+    <h2>{{mode}}</h2>
 </div>
 <div class="row">
     <div *ngFor="let album of albums" class="col-md-12">
@@ -28,6 +28,6 @@
     </div>
 </div>
 <div [ngSwitch]="mode">
-    <div *ngSwitchCase="'add'"><album-add></album-add></div>
+    <div *ngSwitchCase="'add'"><app-album-add></app-album-add></div>
     <div *ngSwitchDefault><h1>Default</h1></div>
 </div>

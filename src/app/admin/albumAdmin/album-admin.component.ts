@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
 import { AlbumAdminService, UserService } from '../adminShared';
-import { Album } from "app/data";
+import { Album } from 'app/data';
 
 @Component({
     templateUrl: 'album-admin.component.html',
@@ -23,14 +23,14 @@ export class AlbumAdminComponent implements OnInit {
 
     getAlbums() {
         this.albumAdminService.getAlbums().then(snapshot => {
-            let json: string[] = snapshot.val();
+            const json: string[] = snapshot.val();
             this.albums = Object.keys(json).map(key => json[key]);
         });
     }
 
     createAlbum(album: Album) {
-        let albumsRef = firebase.database().ref('albums/');
-        let newAlbumRef = albumsRef.push().set({
+        const albumsRef = firebase.database().ref('albums/');
+        const newAlbumRef = albumsRef.push().set({
             title: album.title,
             artist: album.artist,
             genre: album.genre,
