@@ -29,7 +29,7 @@ export class GenreAddComponent implements OnInit {
         
         const genre = new Genre(name, description);
         
-        this.genreAdminService.createGenre(Genre);
+        this.genreAdminService.createGenre(genre);
         this.router.navigate(['/admin/genre-admin']);
     }
 

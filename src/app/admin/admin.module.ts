@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Import components
-import { AdminComponent } from './adminComponent';
+import { AdminComponent } from '.';
 import { AdminHomeComponent } from './adminHome';
 import { AlbumAdminComponent, AlbumAddComponent } from "./albumAdmin";
 import { GenreAdminComponent, GenreAddComponent } from "./genreAdmin";

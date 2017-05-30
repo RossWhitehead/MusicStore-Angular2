@@ -8,7 +8,7 @@ import { Genre } from '.';
 export class GenreAdminService {
     genres: any;
 
-    getGenres(): any {
+    getGenres() {
         let genresRef = firebase.database().ref('genres');
         return genresRef.once('value');
     }

@@ -23,22 +23,10 @@ export class GenreAdminComponent implements OnInit {
         this.getGenres();
     }
 
-    getGenre() {
+    getGenres() {
         this.genreAdminService.getGenres().then(snapshot => {
             let json: string[] = snapshot.val();
             this.genres = Object.keys(json).map(key => json[key]);
-        });
-    }
-
-    createGenre(genre: Genre) {
-        let albumsRef = firebase.database().ref('albums/');
-        let newAlbumRef = albumsRef.push().set({
-            name: genre.name,
-            description: genre.description
-        }, function (error) {
-            if (error) {
-                alert(`${error.message} Unable to create genre. Please try again.`);
-            }
         });
     }
 
