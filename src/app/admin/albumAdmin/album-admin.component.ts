@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
-import { AlbumAdminService, UserService } from '../adminShared';
-import { Album } from "app/data";
+import { UserService } from '../adminShared';
+import { AlbumAdminService } from ".";
+
+import { Album } from ".";
 
 @Component({
     templateUrl: 'album-admin.component.html',

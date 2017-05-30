@@ -1,17 +1,23 @@
+// Import modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Import components
 import { AdminComponent } from './adminComponent';
 import { AdminHomeComponent } from './adminHome';
-import { AlbumAdminComponent } from "./albumAdmin";
-import { AlbumAddComponent } from "./albumAdmin/albumAdd";
+import { AlbumAdminComponent, AlbumAddComponent } from "./albumAdmin";
+import { GenreAdminComponent, GenreAddComponent } from "./genreAdmin";
 import { LoginComponent } from './login';
 
+// Import routes
 import { adminRoutes } from './admin.routes';
 
-import { AlbumAdminService, UserService } from './adminShared';
+// Import services
+import { UserService } from './adminShared';
+import { AlbumAdminService } from './albumAdmin';
+import { GenreAdminService } from './genreAdmin';
 
 @NgModule({
     declarations: [
@@ -19,6 +25,8 @@ import { AlbumAdminService, UserService } from './adminShared';
         AdminHomeComponent,
         AlbumAddComponent,
         AlbumAdminComponent,
+        GenreAddComponent,
+        GenreAdminComponent,
         LoginComponent
     ],
     imports: [ 
@@ -30,6 +38,7 @@ import { AlbumAdminService, UserService } from './adminShared';
     exports: [ RouterModule ],
     providers: [ 
         AlbumAdminService,
+        GenreAdminService,
         UserService 
     ]
 })

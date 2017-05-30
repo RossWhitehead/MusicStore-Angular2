@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { Album } from 'app/data';
+import { Album } from '.';
 
-import { AlbumAdminService } from "app/admin/adminShared";
+import { AlbumAdminService } from '.';
 
 @Component({
     selector: 'album-add',

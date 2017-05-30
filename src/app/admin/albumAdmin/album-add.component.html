@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md 12">
+        <h1>Add a genre</h1>
+    </div>
+</div>
+
+<form [formGroup]="form" novalidate (ngSubmit)="save()">
+    <div class="row">
+        <div class="col-md 12">
+            <label for="name">Name:</label>
+            <input type="text" name="Name" placeholder="Name (required)" formControlName="name"> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md 12">
+            <label for="name">Description:</label>
+            <input type="text" name="Description" placeholder="Description (required)" formControlName="description"> 
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md 12">
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Save</button>
+            <button (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+</form>

@@ -7,6 +7,9 @@
             <ul class="nav navbar-nav">
                 <li><a [routerLink]="['/admin/album-admin']">Manage Albums</a></li>
             </ul>
+            <ul class="nav navbar-nav">
+                <li><a [routerLink]="['/admin/genre-admin']">Manage Genres</a></li>
+            </ul>
             <div *ngIf="userName">
                 <ul class="nav navbar-nav">
                     <li><a (click)="logout()">Logout</a></li>
