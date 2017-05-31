@@ -1,38 +1,4 @@
 <div class="container">
-<<<<<<< HEAD
-    <div class="col-sm-8 col-sm-offset-2">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <div class="panel-title text-center">
-                    <h1 class="title">Logon</h1>
-                </div>
-            </div>
-            <div class="panel-body">
-                <form class="form form-horizontal">
-                    <div class="input-group">
-                        <label for="email" class="control-label">Email:</label>
-                        <div>
-                            <input type="text" placeholder="Enter email address" id="email" name="email" [(ngModel)]="email" required #em="ngModel">
-                            <div [hidden]="em.valid || em.pristine" class="bg-danger">
-                                Email is required
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label class="control-label">Password:</label>
-                        <div>
-                            <input type="password" placeholder="Enter password" id="passwprd" name="password" [(ngModel)]="password" required #pwd="ngModel">
-                            <div [hidden]="pwd.valid || pwd.pristine" class="bg-danger">
-                                Password is required
-                            </div>
-                        </div>
-                    </div>
-                    <div class="controls">
-                        <a class="btn btn-primary" (click)="login()">Login</a>
-                        <a (click)="cancel()">Cancel</a>
-                    </div>
-                </form>
-=======
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
             <div class="panel panel-primary">
@@ -67,7 +33,6 @@
                         </div>
                     </form>
                 </div>
->>>>>>> 5d100e04c7ef7186419d73529fd76b7bb920e4d4
             </div>
         </div>
     </div>
