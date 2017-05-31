@@ -27,7 +27,7 @@ export class AlbumAdminService {
             }
             else
             {
-                alert('Album saved.');
+                console.log('Album saved.');
             }
         });
     }

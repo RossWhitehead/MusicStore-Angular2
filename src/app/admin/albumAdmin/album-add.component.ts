@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -18,6 +18,7 @@ import { GenreAdminService } from '../genreAdmin';
 export class AlbumAddComponent implements OnInit {
     albumForm: FormGroup;    
     genreOptions: KeyValuePair[] = [];
+    @Output() hasSaved: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     constructor(
         private albumAdminService: AlbumAdminService, 
@@ -49,10 +50,10 @@ export class AlbumAddComponent implements OnInit {
         const album = new Album(title, genreId, price, artist, albumArtUrl);
         
         this.albumAdminService.createAlbum(album);
-        this.router.navigate(['/admin/album-admin']);
+        this.hasSaved.emit(true);
     }
 
     cancel() {
-        this.router.navigate(['/admin/album-admin']);
+        this.hasSaved.emit(false);
     }
 }

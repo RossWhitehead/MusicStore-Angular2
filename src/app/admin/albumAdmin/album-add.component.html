@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="panel-body">
-            <form [formGroup]="albumForm" novalidate (ngSubmit)="save()">
+            <form [formGroup]="albumForm" novalidate>
                 <div class="form-group">
                     <label class="control-label col-md-4" for="title">Title:</label>
                     <input class="form-control col-md-8" type="text" name="title" placeholder="Title (required)" formControlName="title">
@@ -19,8 +19,8 @@
                 </div>
                 <div class="form-group">
                     <div class=" col-md-offset-4 col-md-8">
-                        <button class="btn btn-primary" type="submit" [disabled]="!albumForm.valid">Save</button>
-                        <button (click)="cancel()">Cancel</button>
+                        <button type="button" class="btn btn-primary" (click)="save()" [disabled]="!albumForm.valid">Save</button>
+                        <button type="button" (click)="cancel()">Cancel</button>
                     </div>
                 </div>
             </form>

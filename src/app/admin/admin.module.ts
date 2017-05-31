@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Import components
 import { AdminComponent } from '.';
 import { AdminHomeComponent } from './adminHome';
+import { AdminNavComponent } from './adminNav';
 import { AlbumAdminComponent, AlbumAddComponent } from "./albumAdmin";
 import { GenreAdminComponent, GenreAddComponent } from "./genreAdmin";
 import { LoginComponent } from './login';
@@ -23,6 +24,7 @@ import { GenreAdminService } from './genreAdmin';
     declarations: [
         AdminComponent,
         AdminHomeComponent,
+        AdminNavComponent,
         AlbumAddComponent,
         AlbumAdminComponent,
         GenreAddComponent,

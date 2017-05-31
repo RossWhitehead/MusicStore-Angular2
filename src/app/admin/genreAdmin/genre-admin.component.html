@@ -1,23 +1,4 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" [routerLink]="['/admin/album-admin']">Manage Genres</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a (click)="chooseMode('add')">Add Genre</a></li>
-                <li *ngIf="mode"><a (click)="chooseMode('')">Manage Genres</a></li>    
-                <li><a [routerLink]="['/admin']">Admin Home</a></li>            
-            </ul>
-            <div *ngIf="userName">
-                <ul class="nav navbar-nav">
-                    <li><a (click)="logout()">Logout</a></li>
-                    <li><a>Welcome {{userName}}</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
+<app-admin-nav [selectedMenuItem]="'ManageGenres'"></app-admin-nav>
 <h1>Genre Admin</h1>
 <div class="row">
     <h2>{{genres?.length}}</h2>

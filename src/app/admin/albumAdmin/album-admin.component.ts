@@ -36,4 +36,11 @@ export class AlbumAdminComponent implements OnInit {
     chooseMode(mode: string) {
         this.mode = mode;
     }
+
+    onSave(message: boolean){
+        this.chooseMode('');
+        if(message === true) {
+            this.getAlbums();
+        }
+    }
 }
