@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title text-center">
+                        <h1 class="title">Add a genre</h1>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" [formGroup]="form" novalidate (ngSubmit)="save()">
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="name">Name:</label>
+                            <input class="form-control col-md-8" type="text" name="Name" placeholder="Name (required)" formControlName="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="name">Description:</label>
+                            <input class="form-control col-md-8" type="text" name="Description" placeholder="Description (required)" formControlName="description">
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-8">
+                                <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Save</button>
+                                <button (click)="cancel()">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

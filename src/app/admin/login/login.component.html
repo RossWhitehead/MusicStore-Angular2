@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
     <div class="col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -31,6 +32,42 @@
                         <a (click)="cancel()">Cancel</a>
                     </div>
                 </form>
+=======
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title text-center">
+                        <h1 class="title">Logon</h1>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="email" class="cols-md-3 control-label">Email:</label>
+                            <div class="cols-md-9">
+                                <input class="form-control" type="text" placeholder="Enter email address" id="email" name="email" [(ngModel)]="email" required #em="ngModel">
+                                <div [hidden]="em.valid || em.pristine" class="bg-danger">
+                                    Email is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="cols-md-3 control-label">Password:</label>
+                            <div class="cols-md-9">
+                                <input class="form-control" type="password" placeholder="Enter password" id="passwprd" name="password" [(ngModel)]="password" required #pwd="ngModel">
+                                <div [hidden]="pwd.valid || pwd.pristine" class="bg-danger">
+                                    Password is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group cols-md-9 cols-md-offset-3">
+                            <a class="btn btn-primary" (click)="login()">Login</a>
+                            <a (click)="cancel()">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+>>>>>>> 5d100e04c7ef7186419d73529fd76b7bb920e4d4
             </div>
         </div>
     </div>

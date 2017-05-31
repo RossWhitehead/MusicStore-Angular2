@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import * as firebase from 'firebase';
 
-import { Album } from 'app/data';
+import { Album } from '.';
 
 import { APP_CONFIG, AppConfig } from 'app/config/app.config';
 
@@ -20,14 +20,14 @@ export class AlbumAdminService {
         const newAlbumRef = albumsRef.push().set({
             title: album.title,
             artist: album.artist,
-            genre: album.genre,
+            genreId: album.genreId,
             price: album.price,
             albumArtUrl: album.albumArtUrl
         }, function (error) {
             if (error) {
-                alert(`${error.message} Unable to log in. Please try again.`);
+                alert(`${error.message} Unable to save album. Please try again.`);
             } else {
-                alert('Album saved.');
+                console.log('Album saved.');
             }
         });
     }

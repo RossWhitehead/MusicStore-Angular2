@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AdminComponent } from './admin.component';
+import { AdminComponent } from '.';
 import { AdminHomeComponent } from './adminHome';
 import { AlbumAdminComponent } from './albumAdmin';
 import { AlbumAddComponent } from './albumAdmin/albumAdd';

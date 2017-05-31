@@ -8,7 +8,7 @@ import { appRoutes } from './app.routes';
 
 import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './config/app.config';
 
-import { AdminModule } from './admin';
+import { AppComponent } from './app.component';
 import { AppMenuComponent, GenreMenuComponent } from './appMenu';
 import { TopSellingComponent, BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';

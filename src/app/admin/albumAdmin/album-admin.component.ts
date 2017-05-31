@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
-import { AlbumAdminService, UserService } from '../adminShared';
-import { Album } from 'app/data';
+import { UserService } from '../adminShared';
+import { AlbumAdminService } from '.';
+
+import { Album } from '.';
 
 @Component({
     templateUrl: 'album-admin.component.html',
@@ -14,7 +16,10 @@ export class AlbumAdminComponent implements OnInit {
     mode: string;
     albums: any;
 
-    constructor(private albumAdminService: AlbumAdminService, private userService: UserService, private router: Router) { }
+    constructor(
+        private albumAdminService: AlbumAdminService, 
+        private userService: UserService, 
+        private router: Router) { }
 
     ngOnInit() {
         this.userName = this.userService.userName;
@@ -28,22 +33,14 @@ export class AlbumAdminComponent implements OnInit {
         });
     }
 
-    createAlbum(album: Album) {
-        const albumsRef = firebase.database().ref('albums/');
-        const newAlbumRef = albumsRef.push().set({
-            title: album.title,
-            artist: album.artist,
-            genre: album.genre,
-            price: album.price,
-            albumArtUrl: album.albumArtUrl
-        }, function (error) {
-            if (error) {
-                alert(`${error.message} Unable to log in. Please try again.`);
-            }
-        });
-    }
-
     chooseMode(mode: string) {
         this.mode = mode;
+    }
+
+    onSave(message: boolean){
+        this.chooseMode('');
+        if(message === true) {
+            this.getAlbums();
+        }
     }
 }
