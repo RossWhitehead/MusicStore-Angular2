@@ -1,14 +1,40 @@
 <app-admin-nav [selectedMenuItem]="'ManageGenres'"></app-admin-nav>
-<h1>Genre Admin</h1>
-<div class="row">
-    <h2>{{genres?.length}}</h2>
-</div>
-<div class="row">
-    <div *ngFor="let genre of genres" class="col-md-12">
-        <h4>{{genre.name}}</h4>
+<div class="container">
+    <h2>Manage Genres</h2>
+    <p>{{genres?.length}} genre(s)</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Genre key</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let genre of genres">
+                <td>{{genre.genreKey}}</td>
+                <td>{{genre.name}}</td>
+                <td>{{genre.description}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" (click)="edit(genre.genreKey)">Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="delete(genre.genreKey)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div [ngSwitch]="mode">
+        <div *ngSwitchCase="'add'">
+            <app-genre-add (hasSaved)='onSave($event)'></app-genre-add>
+        </div>
+        <div *ngSwitchCase="'edit'">
+            <app-genre-edit [genreKey]='targetGenreKey' (hasSaved)='onSave($event)'></app-genre-edit>
+        </div>
+        <div *ngSwitchCase="'delete'">
+            <app-genre-delete [genreKey]='targetGenreKey' (hasDeleted)='onSave($event)'></app-genre-delete>
+        </div>
+        <div *ngSwitchDefault>
+            <button class="btn btn-primary btn-sm" (click)="add()">Add genre</button>
+        </div>
     </div>
-</div>
-<div [ngSwitch]="mode">
-    <div *ngSwitchCase="'add'"><genre-add></genre-add></div>
-    <div *ngSwitchDefault><h1>Default</h1></div>
 </div>

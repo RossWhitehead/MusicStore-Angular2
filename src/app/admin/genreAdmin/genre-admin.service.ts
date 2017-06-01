@@ -4,28 +4,58 @@ import * as firebase from 'firebase';
 
 import { Genre } from '.';
 
+import { APP_CONFIG, AppConfig } from 'app/config/app.config';
+
 @Injectable()
 export class GenreAdminService {
-    genres: any;
 
-    getGenres() {
-        let genresRef = firebase.database().ref('genres');
+    getGenre(genreKey: string): any {
+        const genreRef = firebase.database().ref('genres/' + genreKey);
+        return genreRef.once('value');
+    }
+
+    getGenres(): any {
+        const genresRef = firebase.database().ref('genres');
         return genresRef.once('value');
     }
 
     createGenre(genre: Genre) {
-        let genresRef = firebase.database().ref('genres');
-        let newGenreRef = genresRef.push().set({
+        const genresRef = firebase.database().ref('genres');
+        const newGenreRef = genresRef.push().set({
             name: genre.name,
             description: genre.description
         }, function (error) {
-            if(error){
-                alert(`${error.message} Unable to create genre. Please try again.`);
+            if (error) {
+                alert(`${error.message} Unable to save genre. Please try again.`);
+            } else {
+                console.log('Genre saved.');
             }
-            else
-            {
-                alert('Genre saved.');
+        });
+    }
+
+    modifyGenre(genre: Genre) {
+        const genresRef = firebase.database().ref('genres/' + genre.genreKey);
+        const newGenreRef = genresRef.set({
+            name: genre.name,
+            description: genre.description
+        }, function (error) {
+            if (error) {
+                alert(`${error.message} Unable to save genre. Please try again.`);
+            } else {
+                console.log('Genre saved.');
             }
+        });
+    }
+
+    deleteGenre(genreKey: string) {
+        const genreRef = firebase.database().ref('genres/' + genreKey);
+        genreRef.remove(
+            function (error) {
+                if (error) {
+                    alert(`${error.message} Unable to delete album. Please try again.`);
+                } else {
+                    console.log('Album deleted.');
+                }
         });
     }
 }

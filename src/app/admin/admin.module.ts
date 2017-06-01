@@ -7,7 +7,7 @@ import { AdminComponent } from '.';
 import { AdminHomeComponent } from './adminHome';
 import { AdminNavComponent } from './adminNav';
 import { AlbumAdminComponent, AlbumAddComponent, AlbumEditComponent, AlbumDeleteComponent } from './albumAdmin';
-import { GenreAdminComponent, GenreAddComponent } from './genreAdmin';
+import { GenreAdminComponent, GenreAddComponent, GenreEditComponent, GenreDeleteComponent } from './genreAdmin';
 import { LoginComponent } from './login';
 
 import { adminRoutes } from './admin.routes';
@@ -28,6 +28,8 @@ import { GenreAdminService } from './genreAdmin';
         AlbumDeleteComponent,
         AlbumAdminComponent,
         GenreAddComponent,
+        GenreEditComponent,
+        GenreDeleteComponent,
         GenreAdminComponent,
         LoginComponent
     ],

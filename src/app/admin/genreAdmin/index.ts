@@ -2,4 +2,6 @@
 export * from './genre-admin.service';
 export * from './genre-admin.component';
 export * from './genre-add.component';
+export * from './genre-edit.component';
+export * from './genre-delete.component';
 export * from './genre';
