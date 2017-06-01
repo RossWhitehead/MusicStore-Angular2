@@ -8,17 +8,17 @@ import { AlbumAdminService } from '.';
 import { Album } from '.';
 
 @Component({
-    templateUrl: 'album-admin.component.html',
-    styleUrls: ['album-admin.component.css']
+    templateUrl: 'album-admin.component.html'
 })
 export class AlbumAdminComponent implements OnInit {
     userName: string;
     mode: string;
-    albums: any;
+    albums: Album[] = [];
+    targetAlbumKey: string;
 
     constructor(
-        private albumAdminService: AlbumAdminService, 
-        private userService: UserService, 
+        private albumAdminService: AlbumAdminService,
+        private userService: UserService,
         private router: Router) { }
 
     ngOnInit() {
@@ -28,18 +28,34 @@ export class AlbumAdminComponent implements OnInit {
 
     getAlbums() {
         this.albumAdminService.getAlbums().then(snapshot => {
-            const json: string[] = snapshot.val();
-            this.albums = Object.keys(json).map(key => json[key]);
+            this.albums = [];
+            snapshot.forEach(snap => {
+                this.albums.push(new Album(snap.key, snap.val().title, snap.val().genreKey, snap.val().price, snap.val().artist, snap.val().albumArtUrl));
+            });
         });
+    }
+
+    add() {
+        this.chooseMode('add');
+    }
+
+    delete(albumKey: string) {
+        this.targetAlbumKey = albumKey;
+        this.chooseMode('delete');
+    }
+
+    edit(albumKey: string) {
+        this.targetAlbumKey = albumKey;
+        this.chooseMode('edit');
     }
 
     chooseMode(mode: string) {
         this.mode = mode;
     }
 
-    onSave(message: boolean){
+    onSave(message: boolean) {
         this.chooseMode('');
-        if(message === true) {
+        if (message === true) {
             this.getAlbums();
         }
     }

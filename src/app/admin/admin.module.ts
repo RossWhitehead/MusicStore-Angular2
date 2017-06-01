@@ -5,7 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminComponent } from '.';
 import { AdminHomeComponent } from './adminHome';
-import { AlbumAdminComponent, AlbumAddComponent } from './albumAdmin';
+import { AdminNavComponent } from './adminNav';
+import { AlbumAdminComponent, AlbumAddComponent, AlbumEditComponent, AlbumDeleteComponent } from './albumAdmin';
+import { GenreAdminComponent, GenreAddComponent } from './genreAdmin';
 import { LoginComponent } from './login';
 
 import { adminRoutes } from './admin.routes';
@@ -14,13 +16,19 @@ import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from 'app/config/app.config';
 
 import { UserService } from './adminShared';
 import { AlbumAdminService } from './albumAdmin';
+import { GenreAdminService } from './genreAdmin';
 
 @NgModule({
     declarations: [
         AdminComponent,
         AdminHomeComponent,
+        AdminNavComponent,
         AlbumAddComponent,
+        AlbumEditComponent,
+        AlbumDeleteComponent,
         AlbumAdminComponent,
+        GenreAddComponent,
+        GenreAdminComponent,
         LoginComponent
     ],
     imports: [
@@ -32,6 +40,7 @@ import { AlbumAdminService } from './albumAdmin';
     exports: [RouterModule],
     providers: [
         AlbumAdminService,
+        GenreAdminService,
         UserService,
         { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
     ]

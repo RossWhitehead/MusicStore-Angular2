@@ -139,3 +139,40 @@ ul#album-list li a:hover {
     background-color: #43a3d8;
   }
 }
+
+/* modal */
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: lightgray;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.modal-panel
+{
+    border: solid 1px black;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    z-index: 100;
+    height: 500px;
+    margin-top: -300px;
+    width: 600px;
+    margin-left: -300px;
+}
+.modal-panel.confirm{
+   height: 250px;
+   margin-top: -175px;
+   width: 400px;
+   margin-left: -200px;
+}
+
+/* Forms */
+.form-group{
+  padding-top: 5px;
+}

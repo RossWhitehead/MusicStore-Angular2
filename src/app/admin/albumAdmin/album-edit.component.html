@@ -3,7 +3,7 @@
     <div class="col-md-offset-2 col-md-4 panel modal-panel">
         <div class="panel-heading">
             <div class="panel-title">
-                <h1>Add an album</h1>
+                <h1>Edit album {{album?.AlbumKey}}</h1>
             </div>
         </div>
         <div class="panel-body">
@@ -15,7 +15,8 @@
                 <div class="form-group">
                     <label class="control-label col-md-4" for="genreKey">Genre:</label>
                     <select class="form-control col-md-8" name="genreKey" formControlName="genreKey">
-                        <option *ngFor="let option of genreOptions" [ngValue]="option.key">{{option.value}}</option>
+                        <option value="default">--Select a genre--</option>
+                        <option *ngFor="let option of genreOptions" [ngValue]="option.key" (selected)="album.genreKey">{{option.value}}</option>
                     </select>
                 </div>
                 <div class="form-group">

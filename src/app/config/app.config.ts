@@ -8,7 +8,7 @@ export interface AppConfig {
     form: string,
     browse: string
   };
-  firebaseConfig: { };
+  firebaseConfig: {};
 }
 
 export const MUSIC_STORE_APP_CONFIG: AppConfig = {

@@ -2,4 +2,6 @@
 export * from './album-admin.service';
 export * from './album-admin.component';
 export * from './album-add.component';
+export * from './album-edit.component';
+export * from './album-delete.component';
 export * from './album';

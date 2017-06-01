@@ -8,8 +8,7 @@ import { GenreAdminService } from '.';
 import { Genre } from '.';
 
 @Component({
-    templateUrl: 'genre-admin.component.html',
-    styleUrls: ['genre-admin.component.css']
+    templateUrl: 'genre-admin.component.html'
 })
 export class GenreAdminComponent implements OnInit {
     userName: string;

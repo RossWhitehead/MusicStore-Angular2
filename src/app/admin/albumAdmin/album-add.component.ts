@@ -11,12 +11,12 @@ import { AlbumAdminService } from '.';
 import { GenreAdminService } from '../genreAdmin';
 
 @Component({
-    selector: 'album-add',
+    selector: 'app-album-add',
     templateUrl: 'album-add.component.html'
 })
 
 export class AlbumAddComponent implements OnInit {
-    albumForm: FormGroup;    
+    form: FormGroup;    
     genreOptions: KeyValuePair[] = [];
     @Output() hasSaved: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -34,9 +34,9 @@ export class AlbumAddComponent implements OnInit {
             });
         });
 
-        this.albumForm = this.formBuilder.group({
+        this.form = this.formBuilder.group({
             title: ['', Validators.required],
-            genre: ['', Validators.required],
+            genreKey: ['', Validators.required],
             price: ['', Validators.required],
             artist: ['', Validators.required],
             albumArtUrl: [''],
@@ -44,13 +44,13 @@ export class AlbumAddComponent implements OnInit {
     }
 
     save() {
-        const title: string = this.albumForm.get('title').value;
-        const genre: string = this.albumForm.get('genre').value;
-        const price: number = this.albumForm.get('price').value;
-        const artist: string = this.albumForm.get('artist').value;
-        const albumArtUrl: string = this.albumForm.get('albumArtUrl').value;
+        const title: string = this.form.get('title').value;
+        const genreKey: string = this.form.get('genreKey').value;
+        const price: number = this.form.get('price').value;
+        const artist: string = this.form.get('artist').value;
+        const albumArtUrl: string = this.form.get('albumArtUrl').value;
 
-        const album = new Album(title, genre, price, artist, albumArtUrl);
+        const album = new Album(null, title, genreKey, price, artist, albumArtUrl);
 
         this.albumAdminService.createAlbum(album);
         this.hasSaved.emit(true);

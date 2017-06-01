@@ -1,0 +1,19 @@
+<div class="modal-background"></div>
+<div class="row">
+    <div class="col-md-offset-2 col-md-4 panel modal-panel confirm">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h1>Delete album</h1>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-11">
+                    <h4>Are you sure you want to delete {{albumKey}} ?</h4>
+                    <button type="button" class="btn btn-default" (click)="delete()">Yes</button>
+                    <button type="button" class="btn btn-default" (click)="cancel()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
