@@ -5,15 +5,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminComponent } from '.';
 import { AdminHomeComponent } from './adminHome';
-import { AlbumAdminComponent } from './albumAdmin';
-import { AlbumAddComponent } from './albumAdmin/albumAdd';
+import { AlbumAdminComponent, AlbumAddComponent } from './albumAdmin';
 import { LoginComponent } from './login';
 
 import { adminRoutes } from './admin.routes';
 
 import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from 'app/config/app.config';
 
-import { AlbumAdminService, UserService } from './adminShared';
+import { UserService } from './adminShared';
+import { AlbumAdminService } from './albumAdmin';
 
 @NgModule({
     declarations: [

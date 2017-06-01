@@ -18,7 +18,19 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <div class=" col-md-offset-4 col-md-8">
+                    <label class="control-label col-md-4" for="price">Price:</label>
+                    <input class="form-control col-md-8" type="text" name="price" placeholder="Price (required)" formControlName="price">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4" for="artist">Artist:</label>
+                    <input class="form-control col-md-8" type="text" name="artist" placeholder="Artist (required)" formControlName="artist">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4" for="albumArtUrl">Album art url:</label>
+                    <input class="form-control col-md-8" type="text" name="albumArtUrl" placeholder="Album art url" formControlName="albumArtUrl">
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
                         <button type="button" class="btn btn-primary" (click)="save()" [disabled]="!albumForm.valid">Save</button>
                         <button type="button" (click)="cancel()">Cancel</button>
                     </div>
