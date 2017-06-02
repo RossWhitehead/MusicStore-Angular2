@@ -15,7 +15,7 @@ import { BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
 import { ErrorComponent } from './error';
 
-import { AlbumService } from './data';
+import { AlbumService, GenreService } from './data';
 
 import { AdminModule } from './admin';
 
@@ -38,6 +38,7 @@ import { AdminModule } from './admin';
   ],
   providers: [
     AlbumService,
+    GenreService,
     { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
   ],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Genre, DataService } from '../data';
+import { Genre, GenreService } from '../data';
 
 @Component({
     selector: 'app-browse',
@@ -8,14 +8,14 @@ import { Genre, DataService } from '../data';
 export class BrowseComponent implements OnInit {
     genre: Genre;
 
-    constructor(private dataService: DataService) {
+    constructor(private genreService: GenreService) {
 
     }
 
     ngOnInit() {
-        this.dataService.getGenre().subscribe(
-            genre => this.genre = genre,
-            function (error) { console.log('Error happened' + error); },
-            function () { console.log('the subscription is completed - ' + this.genre); });
+        // this.genreService.getGenre().subscribe(
+        //     genre => this.genre = genre,
+        //     function (error) { console.log('Error happened' + error); },
+        //     function () { console.log('the subscription is completed - ' + this.genre); });
     }
 }
