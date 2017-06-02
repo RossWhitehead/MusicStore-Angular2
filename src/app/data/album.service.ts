@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 
-import * as firebase from 'firebase';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { Album } from '.';
 
@@ -9,19 +9,23 @@ import { APP_CONFIG, AppConfig } from 'app/config/app.config';
 @Injectable()
 export class AlbumService {
 
-    constructor(@Inject(APP_CONFIG) config: AppConfig) {
-        // Initialize Firebase
-        firebase.initializeApp(config.firebaseConfig);
+    constructor(private db: AngularFireDatabase) {
     }
 
     getAlbum(albumKey: string): any {
-        const albumsRef = firebase.database().ref('albums/' + albumKey);
-        return albumsRef.once('value');
+        const albumsRef = this.db.list('albums/' + albumKey);
+        return albumsRef;
     }
 
     getTopSellingAlbums(): any {
         // TODO: Implement top selling logic.
-        const albumsRef = firebase.database().ref('albums');
-        return albumsRef.orderByKey().limitToFirst(5).once('value');
+        const albums = this.db.list('albums', {
+            query: {
+                orderByKey: true,
+                limitToFirst: 5
+            }
+        });
+        console.log(albums);
+        return albums;
     }
 }

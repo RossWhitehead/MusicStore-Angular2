@@ -13,19 +13,20 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.albumService.getTopSellingAlbums().then(snapshot => {
-            this.albums = [];
-            snapshot.forEach(snap => {
+        this.albums = [];
+        this.albumService.getTopSellingAlbums().subscribe(snapshots => {
+            snapshots.forEach(snapshot => {
                 this.albums.push(new Album(
-                    snap.key, 
-                    snap.val().title, 
-                    snap.val().genreKey, 
-                    snap.val().price, 
-                    snap.val().artist, 
-                    snap.val().albumArtUrl
+                    snapshot.$key,
+                    snapshot.title,
+                    snapshot.genreKey,
+                    snapshot.price,
+                    snapshot.artist,
+                    snapshot.albumArtUrl
                 ));
             });
         });
+        
         console.log(this.albums);
     }
 }

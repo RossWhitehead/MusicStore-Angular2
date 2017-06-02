@@ -3,13 +3,16 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { appRoutes } from './app.routes';
 
 import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './config/app.config';
 
 import { AppComponent } from './app.component';
-import { AppMenuComponent, GenreMenuComponent } from './appMenu';
+import { NavComponent, GenreMenuComponent } from './nav';
 import { HomeComponent } from './home';
 import { BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
@@ -22,7 +25,7 @@ import { AdminModule } from './admin';
 @NgModule({
   declarations: [
     AppComponent,
-    AppMenuComponent,
+    NavComponent,
     HomeComponent,
     GenreMenuComponent,
     CustomerFormComponent,
@@ -34,7 +37,10 @@ import { AdminModule } from './admin';
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(MUSIC_STORE_APP_CONFIG.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [
     AlbumService,
