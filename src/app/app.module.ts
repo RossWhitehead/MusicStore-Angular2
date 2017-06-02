@@ -10,11 +10,12 @@ import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './config/app.config';
 
 import { AppComponent } from './app.component';
 import { AppMenuComponent, GenreMenuComponent } from './appMenu';
-import { TopSellingComponent, BrowseComponent } from './albums';
+import { HomeComponent } from './home';
+import { BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
 import { ErrorComponent } from './error';
 
-import { DataService } from './data';
+import { AlbumService } from './data';
 
 import { AdminModule } from './admin';
 
@@ -22,8 +23,8 @@ import { AdminModule } from './admin';
   declarations: [
     AppComponent,
     AppMenuComponent,
+    HomeComponent,
     GenreMenuComponent,
-    TopSellingComponent,
     CustomerFormComponent,
     BrowseComponent,
     ErrorComponent
@@ -36,7 +37,7 @@ import { AdminModule } from './admin';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    DataService,
+    AlbumService,
     { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
   ],
   bootstrap: [AppComponent]

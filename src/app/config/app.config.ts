@@ -20,7 +20,7 @@ export const MUSIC_STORE_APP_CONFIG: AppConfig = {
     browse: 'browse/:name'
   },
   firebaseConfig: {
-    
+
   }
 };
 
