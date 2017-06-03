@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { appRoutes } from './app.routes';
 
@@ -39,7 +38,6 @@ import { AdminModule } from './admin';
     HttpModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(MUSIC_STORE_APP_CONFIG.firebaseConfig),
-    AngularFireAuthModule,
     AngularFireDatabaseModule
   ],
   providers: [
@@ -47,6 +45,8 @@ import { AdminModule } from './admin';
     GenreService,
     { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -1,8 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 
-import * as firebase from 'firebase';
 import { APP_CONFIG, AppConfig } from 'app/config/app.config';
 
 @Injectable()
@@ -12,9 +13,7 @@ export class UserService implements CanActivate {
     userName: string;
     authUser: any;
 
-    constructor(private router: Router, @Inject(APP_CONFIG) config: AppConfig) {
-        // Initialize Firebase
-        firebase.initializeApp(config.firebaseConfig);
+    constructor(private router: Router, private angularFireAuth: AngularFireAuth, @Inject(APP_CONFIG) config: AppConfig) {
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
@@ -30,14 +29,14 @@ export class UserService implements CanActivate {
     }
 
     register(email: string, password: string) {
-        firebase.auth().createUserWithEmailAndPassword(email, password)
+        this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
             .catch(function (error) {
                 alert(`${error.message} Please try again.`);
             });
     }
 
     verifyUser() {
-        this.authUser = firebase.auth().currentUser;
+        this.authUser = this.angularFireAuth.authState;
 
         if (this.authUser) {
             this.userName = this.authUser.email;
@@ -47,14 +46,14 @@ export class UserService implements CanActivate {
     }
 
     login(email: string, password: string) {
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        this.angularFireAuth.auth.signInWithEmailAndPassword(email, password)
             .catch(function (error) {
                 alert(`${error.message} Unable to log in. Please try again.`);
             });
     }
 
     logout() {
-        firebase.auth().signOut().then(
+        this.angularFireAuth.auth.signOut().then(
             function () {
                 this.isLoggedIn = false;
             },

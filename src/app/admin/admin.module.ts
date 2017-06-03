@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AdminComponent } from '.';
 import { AdminHomeComponent } from './adminHome';
@@ -37,9 +38,12 @@ import { GenreAdminService } from './genreAdmin';
         CommonModule,
         RouterModule.forChild(adminRoutes),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AngularFireAuthModule
     ],
-    exports: [RouterModule],
+    exports: [
+        RouterModule
+    ],
     providers: [
         AlbumAdminService,
         GenreAdminService,
