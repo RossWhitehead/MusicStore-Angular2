@@ -17,6 +17,7 @@ import { HomeComponent } from './home';
 import { AlbumDetailsComponent, BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
 import { Error404Component } from './error';
+import { CartComponent } from './cart';
 
 // Import services
 import { AlbumService, CartService, GenreService } from './data';
@@ -34,7 +35,8 @@ import { AppRoutingModule } from './app-routing.module';
     CustomerFormComponent,
     AlbumDetailsComponent,
     BrowseComponent,
-    Error404Component
+    Error404Component,
+    CartComponent
   ],
   imports: [
     AdminModule, // Must be placed before AppRoutingModule

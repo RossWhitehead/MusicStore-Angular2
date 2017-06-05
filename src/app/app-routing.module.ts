@@ -5,9 +5,11 @@ import { HomeComponent } from './home';
 import { AlbumDetailsComponent, BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
 import { Error404Component } from './error';
+import { CartComponent } from './cart';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
+    { path: 'cart', component: CartComponent },
     { path: 'form', component: CustomerFormComponent },
     { path: 'browse/:genreName', component: BrowseComponent },
     { path: 'album-details/:albumKey', component: AlbumDetailsComponent },
@@ -24,4 +26,3 @@ const appRoutes: Routes = [
     ]
 })
 export class AppRoutingModule {}
-

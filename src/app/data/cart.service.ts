@@ -25,7 +25,7 @@ export class CartService {
             'createdOn': new Date().getTime() });
     }
 
-    clearCart(){
+    emptyCart(){
         this.getCartItems().remove();
     }
 

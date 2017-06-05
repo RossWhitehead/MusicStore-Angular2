@@ -1,0 +1,46 @@
+<app-nav ></app-nav>
+<div class="container">
+    <h2>Cart</h2>
+    <p>{{cartItems?.length}} items(s)</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cart item key</th>
+                <th>Album key</th>
+                <th>Count</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cartItems">
+                <td>{{item.cartItemKey}}</td>
+                <td>{{item.albumKey}}</td>
+                <td>{{item.count}}</td>
+                <td>{{item.price}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" (click)="edit(album.albumKey)">Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="delete(album.albumKey)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-primary btn-sm" (click)="checkout()">Checkout</button>
+        <button class="btn btn-default btn-sm" [routerLink]="['checkout']">Empty cart</button>
+    </div>
+    <!--<div [ngSwitch]="mode">
+        <div *ngSwitchCase="'add'">
+            <app-album-add (hasSaved)='onSave($event)'></app-album-add>
+        </div>
+        <div *ngSwitchCase="'edit'">
+            <app-album-edit [albumKey]='targetAlbumKey' (hasSaved)='onSave($event)'></app-album-edit>
+        </div>
+        <div *ngSwitchCase="'delete'">
+            <app-album-delete [albumKey]='targetAlbumKey' (hasDeleted)='onSave($event)'></app-album-delete>
+        </div>
+        <div *ngSwitchDefault>
+            <button class="btn btn-primary btn-sm" (click)="add()">Add album</button>
+        </div>
+    </div>-->
+</div>
