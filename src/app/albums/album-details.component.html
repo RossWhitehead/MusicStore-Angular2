@@ -1,0 +1,22 @@
+<div *ngIf="album">
+    <h2>{{album.title}}</h2>
+
+    <p>
+        <img alt="{{album.title}}" src="{{album.albumArtUrl}}" />
+    </p>
+
+    <div id="albumDetails">
+        <p>
+            <em>Genre:</em> {{album.genreKey}}
+        </p>
+        <p>
+            <em>Artist:</em> {{album.artist}}
+        </p>
+        <p>
+            <em>Price:</em> {{album.price}}
+        </p>
+        <p>
+            <a class="btn btn-sm btn-primary" (click)="addToCart()">Add to cart</a>
+        </p>
+    </div>
+</div>

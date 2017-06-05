@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -11,7 +12,7 @@ import { AlbumAdminComponent, AlbumAddComponent, AlbumEditComponent, AlbumDelete
 import { GenreAdminComponent, GenreAddComponent, GenreEditComponent, GenreDeleteComponent } from './genreAdmin';
 import { LoginComponent } from './login';
 
-import { adminRoutes } from './admin.routes';
+import { AdminRoutingModule } from '.';
 
 import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from 'app/config/app.config';
 
@@ -35,14 +36,11 @@ import { GenreAdminService } from './genreAdmin';
         LoginComponent
     ],
     imports: [
+        AdminRoutingModule,
         CommonModule,
-        RouterModule.forChild(adminRoutes),
         FormsModule,
         ReactiveFormsModule,
         AngularFireAuthModule
-    ],
-    exports: [
-        RouterModule
     ],
     providers: [
         AlbumAdminService,

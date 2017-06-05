@@ -1,1 +1,1 @@
-export { ErrorComponent } from './error.component';
+export { Error404Component } from './error-404.component';

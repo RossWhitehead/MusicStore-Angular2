@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 import { Album } from '.';
 
@@ -12,9 +12,9 @@ export class AlbumService {
     constructor(private db: AngularFireDatabase) {
     }
 
-    getAlbum(albumKey: string): any {
-        const albumsRef = this.db.list('albums/' + albumKey);
-        return albumsRef;
+    getAlbum(albumKey: string): FirebaseObjectObservable<any> {
+        const album = this.db.object('albums/' + albumKey);
+        return album;
     }
 
     getTopSellingAlbums(): any {

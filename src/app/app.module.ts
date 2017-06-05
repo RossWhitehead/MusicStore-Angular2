@@ -1,3 +1,4 @@
+// Import modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -6,20 +7,23 @@ import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
-import { appRoutes } from './app.routes';
-
+// Import app config
 import { APP_CONFIG, MUSIC_STORE_APP_CONFIG } from './config/app.config';
 
+// Import components
 import { AppComponent } from './app.component';
 import { NavComponent, GenreMenuComponent } from './nav';
 import { HomeComponent } from './home';
-import { BrowseComponent } from './albums';
+import { AlbumDetailsComponent, BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
-import { ErrorComponent } from './error';
+import { Error404Component } from './error';
 
-import { AlbumService, GenreService } from './data';
+// Import services
+import { AlbumService, CartService, GenreService } from './data';
 
+// Import modules
 import { AdminModule } from './admin';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,20 +32,22 @@ import { AdminModule } from './admin';
     HomeComponent,
     GenreMenuComponent,
     CustomerFormComponent,
+    AlbumDetailsComponent,
     BrowseComponent,
-    ErrorComponent
+    Error404Component
   ],
   imports: [
-    AdminModule, // Must be placed before the RouterModule
+    AdminModule, // Must be placed before AppRoutingModule
+    AppRoutingModule,
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(MUSIC_STORE_APP_CONFIG.firebaseConfig),
     AngularFireDatabaseModule
   ],
   providers: [
     AlbumService,
+    CartService,
     GenreService,
     { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
   ],
