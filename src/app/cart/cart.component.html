@@ -27,7 +27,7 @@
     </table>
     <div>
         <button class="btn btn-primary btn-sm" (click)="checkout()">Checkout</button>
-        <button class="btn btn-default btn-sm" [routerLink]="['checkout']">Empty cart</button>
+        <button class="btn btn-default btn-sm" (click)="emptyCart()">Empty cart</button>
     </div>
     <!--<div [ngSwitch]="mode">
         <div *ngSwitchCase="'add'">

@@ -1,9 +1,11 @@
 <app-nav></app-nav>
-<ul class="row list-unstyled" id="album-list">
-    <li *ngFor="let album of albums" class="col-lg-2 col-md-2 col-sm-2 col-xs-4 container">
-        <a [routerLink]="['/album-details', album.albumKey]">
-            <img alt="{{album.title}}" src="{{album.albumArtUrl}}" />
-            <h4>{{album.title}}</h4>
-        </a>
-    </li>
-</ul>
+<div class="container-fluid">
+    <ul class="list-unstyled row list-group" id="album-list">
+        <li *ngFor="let album of albums" class="list-group-item">
+            <a [routerLink]="['/album-details', album.albumKey]">
+                <img class="col-md-4 col-md-offset-2" alt="{{album.title}}" src="{{album.albumArtUrl}}" />
+                <span class="col-md-4 h4">{{album.title}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
