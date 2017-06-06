@@ -21,7 +21,7 @@ import { CartComponent } from './cart';
 import { CheckoutComponent, CompleteComponent } from './checkout';
 
 // Import services
-import { AlbumService, CartService, GenreService } from './data';
+import { AlbumService, CartService, GenreService, OrderService } from './data';
 
 // Import modules
 import { AdminModule } from './admin';
@@ -54,6 +54,7 @@ import { AppRoutingModule } from './app-routing.module';
     AlbumService,
     CartService,
     GenreService,
+    OrderService,
     { provide: APP_CONFIG, useValue: MUSIC_STORE_APP_CONFIG },
   ],
   bootstrap: [

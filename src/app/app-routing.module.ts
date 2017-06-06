@@ -6,10 +6,13 @@ import { AlbumDetailsComponent, BrowseComponent } from './albums';
 import { CustomerFormComponent } from './forms';
 import { Error404Component } from './error';
 import { CartComponent } from './cart';
+import { CheckoutComponent, CompleteComponent } from "./checkout";
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'cart', component: CartComponent },
+    { path: 'checkout', component: CheckoutComponent },
+    { path: 'complete/:orderKey', component: CompleteComponent },
     { path: 'form', component: CustomerFormComponent },
     { path: 'browse/:genreName', component: BrowseComponent },
     { path: 'album-details/:albumKey', component: AlbumDetailsComponent },

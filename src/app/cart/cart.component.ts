@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CartItem, CartService } from '../data';
 
@@ -9,10 +10,10 @@ import { CartItem, CartService } from '../data';
 
 export class CartComponent implements OnInit {
     cartItems: CartItem[];
-    
-    constructor(private cartService: CartService) { }
 
-    ngOnInit() { 
+    constructor(private cartService: CartService, private router: Router) { }
+
+    ngOnInit() {
         this.cartService.getCartItems().subscribe(snapshots => {
             this.cartItems = [];
 
@@ -27,7 +28,11 @@ export class CartComponent implements OnInit {
         });
     }
 
-    emptyCart(){
+    checkout() {
+        this.router.navigate(['checkout']);
+    }
+
+    emptyCart() {
         this.cartService.emptyCart();
     }
 }

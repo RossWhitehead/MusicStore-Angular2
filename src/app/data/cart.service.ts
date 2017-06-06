@@ -5,8 +5,6 @@ import {
     FirebaseListObservable, 
     FirebaseObjectObservable } from 'angularfire2/database';
 
-import { APP_CONFIG, AppConfig } from 'app/config/app.config';
-
 import { CartItem } from '.';
 
 @Injectable()

@@ -14,7 +14,8 @@ export class CustomerFormComponent implements OnInit {
         'firstName': '',
         'lastName': '',
         'emailGroup.email': '',
-        'emailGroup.confirmEmail': ''
+        'emailGroup.confirmEmail': '',
+        'phone': ''
     };
 
     validationMessages = {
@@ -31,6 +32,9 @@ export class CustomerFormComponent implements OnInit {
         },
         'emailGroup.confirmEmail': {
             'required': 'Email confirmation is required.'
+        },
+        'phone': {
+            'required': 'Phone is required.'
         }
     };
 
@@ -87,6 +91,10 @@ export class CustomerFormComponent implements OnInit {
             sendCatalog: false,
             notification: 'email'
         });
+    }
+
+    save(){
+        
     }
 
     setNotification(preference: string) {
